@@ -1,0 +1,44 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "start": "nuxi start",
+    "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.vue .",
+    "lint:quiet": "eslint --quiet --ignore-path .gitignore --ext .js,.ts,.vue .",
+    "lint:fix": "eslint --fix --quiet --ignore-path .gitignore --ext .js,.ts,.vue ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": {
+    "semi": false,
+    "bracketSameLine": true,
+    "singleQuote": true
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config-typescript": "^12.1.0",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "eslint": "^8.50.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "nuxt": "^3.7.3",
+    "nuxt-windicss": "^2.6.1",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@formkit/icons": "^1.2.2",
+    "@formkit/nuxt": "^1.2.2",
+    "@formkit/themes": "^1.2.2"
+  }
+}
